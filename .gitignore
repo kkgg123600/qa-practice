@@ -1,0 +1,9 @@
+node_modules/
+test-results/
+mobile-results/
+playwright-report/
+blob-report/
+# Downloaded test app binary (fetched by CI from the upstream release; see mobile/README section)
+mobile/apps/*.apk
+.appium/
+*.log

@@ -1,0 +1,13 @@
+
+Running 8 tests using 1 worker
+
+  ✓  1 [electron] › tests-electron/notes.electron.spec.ts:6:1 › DESK-01 app starts with an empty notes list (8.2s)
+  ✓  2 [electron] › tests-electron/notes.electron.spec.ts:14:1 › DESK-02 saving a note shows it in the list and writes it to disk (1.9s)
+  ✓  3 [electron] › tests-electron/notes.electron.spec.ts:22:1 › DESK-03 a note without a title is rejected and nothing is saved (976ms)
+  ✓  4 [electron] › tests-electron/notes.electron.spec.ts:29:1 › DESK-04 notes survive an app restart (2.9s)
+  ✓  5 [electron] › tests-electron/notes.electron.spec.ts:43:1 › DESK-05 deleting a note removes it from the list and from disk (1.2s)
+  ✓  6 [electron] › tests-electron/notes.electron.spec.ts:57:1 › DESK-06 summarize with a mocked model: UI shows the model answer (952ms)
+  ✓  7 [electron] › tests-electron/notes.electron.spec.ts:75:1 › DESK-07 summarize with the real model: every answer meets the output contract (6.3s)
+  ✓  8 [electron] › tests-electron/notes.electron.spec.ts:106:1 › DESK-08 summarize an empty note: clear error, button usable again (1.0s)
+
+  8 passed (24.5s)

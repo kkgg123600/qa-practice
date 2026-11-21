@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>Local Notes</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; max-width: 760px; }
+    input, textarea { display: block; width: 100%; margin: 6px 0 12px; padding: 6px; box-sizing: border-box; }
+    textarea { height: 90px; }
+    .error { color: #b00020; min-height: 1.2em; }
+    li { border: 1px solid #ccc; padding: 8px; margin: 8px 0; list-style: none; }
+    .summary { color: #333; font-style: italic; }
+  </style>
+</head>
+<body>
+  <h1>Local Notes</h1>
+  <form data-test="note-form">
+    <label>Title <input data-test="note-title" name="title"></label>
+    <label>Body <textarea data-test="note-body" name="body"></textarea></label>
+    <button type="submit" data-test="note-save">Save note</button>
+    <p class="error" data-test="form-error" role="alert"></p>
+  </form>
+  <p data-test="note-count">0 notes</p>
+  <ul data-test="note-list"></ul>
+  <script src="renderer.js"></script>
+</body>
+</html>

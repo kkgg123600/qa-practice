@@ -1,0 +1,996 @@
+
+Running 40 tests using 1 worker
+
+  ✓   1 [reference] › tests/api/auth.api.spec.ts:6:3 › API - authentication and authorization › API-05 GET /users/me without a token is rejected (401) (500ms)
+  ✓   2 [reference] › tests/api/auth.api.spec.ts:11:3 › API - authentication and authorization › API-06 GET /invoices without a token is rejected (401) (413ms)
+  ✓   3 [reference] › tests/api/auth.api.spec.ts:16:3 › API - authentication and authorization › API-07 login with a wrong password returns 401 and no token (424ms)
+  ✓   4 [reference] › tests/api/auth.api.spec.ts:24:3 › API - authentication and authorization › API-08 a new user can log in and read only their own, non-secret profile (10.2s)
+  ✓   5 [reference] › tests/api/cart.api.spec.ts:11:3 › API - cart › API-09 a product added to a new cart is returned with its quantity (1.7s)
+  ✓   6 [reference] › tests/api/cart.api.spec.ts:29:3 › API - cart › API-10 adding an unknown product is rejected and leaves the cart empty (33.7s)
+  ✓   7 [reference] › tests/api/products.api.spec.ts:6:3 › API - products › API-01 GET /products returns a well-formed first page (420ms)
+  ✓   8 [reference] › tests/api/products.api.spec.ts:27:3 › API - products › API-02 page 2 does not repeat any product from page 1 (16.9s)
+  ✓   9 [reference] › tests/api/products.api.spec.ts:35:3 › API - products › API-03 sort=price,asc returns ascending prices (8.5s)
+  ✓  10 [reference] › tests/api/products.api.spec.ts:42:3 › API - products › API-04 unknown product id returns 404 with a message, not a crash (414ms)
+  ✓  11 [reference] › tests/cart.spec.ts:10:3 › Product page and cart › TC-05 "+" button increases the quantity from 1 to 2 (2.9s)
+  ✓  12 [reference] › tests/cart.spec.ts:17:3 › Product page and cart › TC-06 adding a product shows a success message and updates the cart badge (3.2s)
+  ✓  13 [reference] › tests/cart.spec.ts:24:3 › Product page and cart › TC-07 cart line total equals unit price x quantity (4.6s)
+  ✓  14 [reference] › tests/catalog.spec.ts:11:3 › Catalog › TC-01 home page lists 9 products, each with a name and a price (1.7s)
+  ✓  15 [reference] › tests/catalog.spec.ts:19:3 › Catalog › TC-02 sorting by "Price (Low - High)" shows ascending prices (2.7s)
+  ✓  16 [reference] › tests/catalog.spec.ts:31:3 › Catalog › TC-03 searching "hammer" returns only hammers (2.5s)
+  ✓  17 [reference] › tests/catalog.spec.ts:48:3 › Catalog › TC-04 main navigation labels are correct (2.2s)
+  ✓  18 [reference] › tests/checkout.spec.ts:5:3 › Checkout (logged-in user, end to end) › E2E-01 a logged-in customer can buy a product and sees the invoice in their account (8.4s)
+  ✓  19 [reference] › tests/forms.spec.ts:4:3 › Forms (negative tests) › TC-08 contact form rejects an empty submission (1.8s)
+  ✓  20 [reference] › tests/forms.spec.ts:13:3 › Forms (negative tests) › TC-09 login with a wrong password is rejected with a clear message (1.9s)
+  ✓  21 [with-bugs] › tests/api/auth.api.spec.ts:6:3 › API - authentication and authorization › API-05 GET /users/me without a token is rejected (401) (435ms)
+  ✘  22 [with-bugs] › tests/api/auth.api.spec.ts:11:3 › API - authentication and authorization › API-06 GET /invoices without a token is rejected (401) (8.5s)
+  ✓  23 [with-bugs] › tests/api/auth.api.spec.ts:16:3 › API - authentication and authorization › API-07 login with a wrong password returns 401 and no token (481ms)
+  ✘  24 [with-bugs] › tests/api/auth.api.spec.ts:24:3 › API - authentication and authorization › API-08 a new user can log in and read only their own, non-secret profile (885ms)
+  -  25 [with-bugs] › tests/api/cart.api.spec.ts:11:3 › API - cart › API-09 a product added to a new cart is returned with its quantity
+  -  26 [with-bugs] › tests/api/cart.api.spec.ts:29:3 › API - cart › API-10 adding an unknown product is rejected and leaves the cart empty
+  ✓  27 [with-bugs] › tests/api/products.api.spec.ts:6:3 › API - products › API-01 GET /products returns a well-formed first page (8.6s)
+  ✓  28 [with-bugs] › tests/api/products.api.spec.ts:27:3 › API - products › API-02 page 2 does not repeat any product from page 1 (559ms)
+  ✓  29 [with-bugs] › tests/api/products.api.spec.ts:35:3 › API - products › API-03 sort=price,asc returns ascending prices (746ms)
+  ✓  30 [with-bugs] › tests/api/products.api.spec.ts:42:3 › API - products › API-04 unknown product id returns 404 with a message, not a crash (475ms)
+  ✘  31 [with-bugs] › tests/cart.spec.ts:10:3 › Product page and cart › TC-05 "+" button increases the quantity from 1 to 2 (9.6s)
+  ✘  32 [with-bugs] › tests/cart.spec.ts:17:3 › Product page and cart › TC-06 adding a product shows a success message and updates the cart badge (10.1s)
+  ✘  33 [with-bugs] › tests/cart.spec.ts:24:3 › Product page and cart › TC-07 cart line total equals unit price x quantity (11.1s)
+  ✓  34 [with-bugs] › tests/catalog.spec.ts:11:3 › Catalog › TC-01 home page lists 9 products, each with a name and a price (5.3s)
+  ✘  35 [with-bugs] › tests/catalog.spec.ts:19:3 › Catalog › TC-02 sorting by "Price (Low - High)" shows ascending prices (4.1s)
+  ✓  36 [with-bugs] › tests/catalog.spec.ts:31:3 › Catalog › TC-03 searching "hammer" returns only hammers (2.8s)
+  ✘  37 [with-bugs] › tests/catalog.spec.ts:48:3 › Catalog › TC-04 main navigation labels are correct (9.0s)
+  ✘  38 [with-bugs] › tests/checkout.spec.ts:5:3 › Checkout (logged-in user, end to end) › E2E-01 a logged-in customer can buy a product and sees the invoice in their account (11.1s)
+  ✓  39 [with-bugs] › tests/forms.spec.ts:4:3 › Forms (negative tests) › TC-08 contact form rejects an empty submission (2.0s)
+  ✓  40 [with-bugs] › tests/forms.spec.ts:13:3 › Forms (negative tests) › TC-09 login with a wrong password is rejected with a clear message (3.3s)
+
+
+  1) [with-bugs] › tests/api/auth.api.spec.ts:11:3 › API - authentication and authorization › API-06 GET /invoices without a token is rejected (401) 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 200
+
+      11 |   test('API-06 GET /invoices without a token is rejected (401)', async ({ request, baseURL }) => {
+      12 |     const res = await apiClient(request, baseURL).get('/invoices');
+    > 13 |     expect(res.status()).toBe(401);
+         |                          ^
+      14 |   });
+      15 |
+      16 |   test('API-07 login with a wrong password returns 401 and no token', async ({ request, baseURL }) => {
+        at /home/h/qa-practice/tests/api/auth.api.spec.ts:13:26
+
+    Error Context: test-results/api-auth.api-API---authent-71e5a-ut-a-token-is-rejected-401--with-bugs/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api-auth.api-API---authent-71e5a-ut-a-token-is-rejected-401--with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api-auth.api-API---authent-71e5a-ut-a-token-is-rejected-401--with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [with-bugs] › tests/api/auth.api.spec.ts:24:3 › API - authentication and authorization › API-08 a new user can log in and read only their own, non-secret profile 
+
+    Error: expect(received).not.toContain(expected) // indexOf
+
+    Expected value: not "password"
+    Received array:     ["id", "first_name", "last_name", "address", "city", "state", "country", "postcode", "phone", "dob", "email", "password", "role", "enabled", "failed_login_attempts"]
+
+      35 |     expect(me.first_name).toBe(user.firstName);
+      36 |     // A profile response must never carry credential material.
+    > 37 |     expect.soft(Object.keys(me)).not.toContain('password');
+         |                                      ^
+      38 |
+      39 |     // A new account has no orders, so it must not see anybody else's invoices.
+      40 |     const inv = await apiClient(request, baseURL).get('/invoices', {
+        at /home/h/qa-practice/tests/api/auth.api.spec.ts:37:38
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -   1
+    + Received  + 612
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "billing_address": "Test street 123",
+    +     "billing_city": "Utrecht",
+    +     "billing_country": "The Netherlands",
+    +     "billing_postcode": "1122AB",
+    +     "billing_state": "Utrecht",
+    +     "id": 7,
+    +     "invoice_date": "2026-11-09 17:01:15",
+    +     "invoice_number": "INV-2022000002",
+    +     "invoicelines": Array [
+    +       Object {
+    +         "id": 13,
+    +         "invoice_id": 7,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 7,
+    +           "co2_rating": "D",
+    +           "description": "Versatile combination pliers designed for gripping, bending, and cutting wire with ease. Featuring chrome vanadium steel construction with induction-hardened cutting edges, these pliers deliver excellent grip and leverage for a wide range of tasks. The precision-machined jaws combine flat gripping surfaces with a pipe-grip section and integrated wire cutter for true multi-purpose functionality. Ergonomic bi-component handles reduce hand fatigue during extended use and provide a secure hold even with oily or gloved hands. The joint is precisely fitted to eliminate play and ensure smooth operation over thousands of cycles. Ideal for electricians, mechanics, and DIY enthusiasts tackling everyday projects around the workshop or job site.",
+    +           "id": 1,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Combination Pliers",
+    +           "price": 14.15,
+    +           "product_image_id": 1,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 1,
+    +         "quantity": 1,
+    +         "unit_price": 14.15,
+    +       },
+    +       Object {
+    +         "id": 14,
+    +         "invoice_id": 7,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 5,
+    +           "co2_rating": "D",
+    +           "description": "Complete professional set of 12 open-end spanners covering metric sizes from 6mm to 32mm, crafted from chrome vanadium steel for lasting strength and resistance to flexing under heavy torque. Each spanner features a slim-profile head design angled at 15 degrees for access in tight spaces, and the open-end configuration allows quick lateral placement on fasteners without the need to thread them through from the end. A mirror-polished chrome finish resists corrosion, repels grease and oil, and looks sharp in any professional tool collection. Size markings are deeply laser-etched on both sides of each spanner for instant identification even in low light conditions. The set is supplied in a durable roll-up canvas pouch with individual pockets for organized storage and easy transport to any job site. An essential investment for automotive workshops, industrial maintenance departments, and serious home mechanics.",
+    +           "id": 16,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Open-end Spanners (Set)",
+    +           "price": 38.51,
+    +           "product_image_id": 16,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 16,
+    +         "quantity": 1,
+    +         "unit_price": 8.51,
+    +       },
+    +     ],
+    +     "payment_account_name": "Tester",
+    +     "payment_account_number": "09876543ABC",
+    +     "payment_method": "Cash on Delivery",
+    +     "status": "COMPLETED",
+    +     "status_message": null,
+    +     "total": 22.66,
+    +     "user_id": 2,
+    +   },
+    +   Object {
+    +     "billing_address": "Midway Road 123",
+    +     "billing_city": "Springdale",
+    +     "billing_country": "United States",
+    +     "billing_postcode": 72764,
+    +     "billing_state": "Arkansas",
+    +     "id": 10,
+    +     "invoice_date": "2026-11-09 17:01:15",
+    +     "invoice_number": "INV-2022000004",
+    +     "invoicelines": Array [
+    +       Object {
+    +         "id": 19,
+    +         "invoice_id": 10,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 7,
+    +           "co2_rating": "D",
+    +           "description": "Versatile combination pliers designed for gripping, bending, and cutting wire with ease. Featuring chrome vanadium steel construction with induction-hardened cutting edges, these pliers deliver excellent grip and leverage for a wide range of tasks. The precision-machined jaws combine flat gripping surfaces with a pipe-grip section and integrated wire cutter for true multi-purpose functionality. Ergonomic bi-component handles reduce hand fatigue during extended use and provide a secure hold even with oily or gloved hands. The joint is precisely fitted to eliminate play and ensure smooth operation over thousands of cycles. Ideal for electricians, mechanics, and DIY enthusiasts tackling everyday projects around the workshop or job site.",
+    +           "id": 1,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Combination Pliers",
+    +           "price": 14.15,
+    +           "product_image_id": 1,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 1,
+    +         "quantity": 1,
+    +         "unit_price": 14.15,
+    +       },
+    +       Object {
+    +         "id": 20,
+    +         "invoice_id": 10,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 5,
+    +           "co2_rating": "D",
+    +           "description": "Complete professional set of 12 open-end spanners covering metric sizes from 6mm to 32mm, crafted from chrome vanadium steel for lasting strength and resistance to flexing under heavy torque. Each spanner features a slim-profile head design angled at 15 degrees for access in tight spaces, and the open-end configuration allows quick lateral placement on fasteners without the need to thread them through from the end. A mirror-polished chrome finish resists corrosion, repels grease and oil, and looks sharp in any professional tool collection. Size markings are deeply laser-etched on both sides of each spanner for instant identification even in low light conditions. The set is supplied in a durable roll-up canvas pouch with individual pockets for organized storage and easy transport to any job site. An essential investment for automotive workshops, industrial maintenance departments, and serious home mechanics.",
+    +           "id": 16,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Open-end Spanners (Set)",
+    +           "price": 38.51,
+    +           "product_image_id": 16,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 16,
+    +         "quantity": 1,
+    +         "unit_price": 8.51,
+    +       },
+    +     ],
+    +     "payment_account_name": "Tester",
+    +     "payment_account_number": "09876543ABC",
+    +     "payment_method": "Cash on Delivery",
+    +     "status": "COMPLETED",
+    +     "status_message": null,
+    +     "total": 22.66,
+    +     "user_id": 3,
+    +   },
+    +   Object {
+    +     "billing_address": "Test street 123",
+    +     "billing_city": "Utrecht",
+    +     "billing_country": "The Netherlands",
+    +     "billing_postcode": "1122AB",
+    +     "billing_state": "Utrecht",
+    +     "id": 6,
+    +     "invoice_date": "2026-11-07 17:01:15",
+    +     "invoice_number": "INV-2022000001",
+    +     "invoicelines": Array [
+    +       Object {
+    +         "id": 12,
+    +         "invoice_id": 6,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 3,
+    +           "co2_rating": "D",
+    +           "description": "Modern claw hammer featuring a durable fiberglass handle that outlasts wood, absorbs vibration more effectively, and shrugs off moisture without swelling, cracking, or loosening over time. The 400g carbon steel head is drop-forged and heat-treated to optimal hardness for reliable nail driving in softwood, hardwood, and engineered lumber. The fiberglass core is permanently bonded to the head and encased in a comfortable overmold grip that prevents slipping even when wet or oily. A magnetic nail starter near the head allows one-handed nail placement, freeing your other hand to hold materials in position. The curved claw provides smooth, controlled nail extraction with excellent leverage. Ideal for contractors and DIY builders who want a weather-resistant, maintenance-free hammer that performs reliably on every job site and in any season.",
+    +           "id": 11,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Claw Hammer with Fiberglass Handle",
+    +           "price": 20.14,
+    +           "product_image_id": 11,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 11,
+    +         "quantity": 1,
+    +         "unit_price": 20.14,
+    +       },
+    +     ],
+    +     "payment_account_name": "Tester",
+    +     "payment_account_number": "09876543ABC",
+    +     "payment_method": "Cash on Delivery",
+    +     "status": "COMPLETED",
+    +     "status_message": null,
+    +     "total": 20.14,
+    +     "user_id": 2,
+    +   },
+    +   Object {
+    +     "billing_address": "Midway Road 123",
+    +     "billing_city": "Springdale",
+    +     "billing_country": "United States",
+    +     "billing_postcode": 72764,
+    +     "billing_state": "Arkansas",
+    +     "id": 9,
+    +     "invoice_date": "2026-11-07 17:01:15",
+    +     "invoice_number": "INV-2022000003",
+    +     "invoicelines": Array [
+    +       Object {
+    +         "id": 18,
+    +         "invoice_id": 9,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 3,
+    +           "co2_rating": "D",
+    +           "description": "Modern claw hammer featuring a durable fiberglass handle that outlasts wood, absorbs vibration more effectively, and shrugs off moisture without swelling, cracking, or loosening over time. The 400g carbon steel head is drop-forged and heat-treated to optimal hardness for reliable nail driving in softwood, hardwood, and engineered lumber. The fiberglass core is permanently bonded to the head and encased in a comfortable overmold grip that prevents slipping even when wet or oily. A magnetic nail starter near the head allows one-handed nail placement, freeing your other hand to hold materials in position. The curved claw provides smooth, controlled nail extraction with excellent leverage. Ideal for contractors and DIY builders who want a weather-resistant, maintenance-free hammer that performs reliably on every job site and in any season.",
+    +           "id": 11,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Claw Hammer with Fiberglass Handle",
+    +           "price": 20.14,
+    +           "product_image_id": 11,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 11,
+    +         "quantity": 1,
+    +         "unit_price": 20.14,
+    +       },
+    +     ],
+    +     "payment_account_name": "Tester",
+    +     "payment_account_number": "09876543ABC",
+    +     "payment_method": "Cash on Delivery",
+    +     "status": "COMPLETED",
+    +     "status_message": null,
+    +     "total": 20.14,
+    +     "user_id": 3,
+    +   },
+    +   Object {
+    +     "billing_address": "Test street 123",
+    +     "billing_city": "Brussels",
+    +     "billing_country": "Belgium",
+    +     "billing_postcode": "1122AB",
+    +     "billing_state": "Brussels",
+    +     "id": 5,
+    +     "invoice_date": "2021-10-30 22:04:47",
+    +     "invoice_number": "INV-2021000002",
+    +     "invoicelines": Array [
+    +       Object {
+    +         "id": 9,
+    +         "invoice_id": 5,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 10,
+    +           "co2_rating": "D",
+    +           "description": "Portable circular saw powered by a robust 1400W motor that drives a 190mm carbide-tipped blade at 5,500 RPM for clean, fast, straight cuts through solid timber, plywood, MDF, and sheet materials up to 67mm thick. The precision-machined aluminum base plate provides a flat, stable reference surface and adjusts smoothly for bevel cuts from 0 to 45 degrees with a positive detent at the most commonly used angles. An integrated dust blower directs a stream of air ahead of the blade to keep the pencil line visible under the constant shower of sawdust generated during cutting. The spindle lock allows quick, safe blade changes with a single wrench, while the electric brake stops the blade within seconds of releasing the trigger for added safety between cuts. An ergonomic soft-grip main handle and auxiliary front handle provide confident two-handed control for both plunge cuts and guided rip cuts. Essential for framing carpenters, renovation contractors, and DIY builders who need a portable, powerful saw for on-site timber work.",
+    +           "id": 21,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Circular Saw",
+    +           "price": 80.19,
+    +           "product_image_id": 21,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 21,
+    +         "quantity": 1,
+    +         "unit_price": 10.19,
+    +       },
+    +       Object {
+    +         "id": 10,
+    +         "invoice_id": 5,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 3,
+    +           "co2_rating": "D",
+    +           "description": "Powerful sledgehammer designed for heavy demolition, driving stakes, breaking concrete, and splitting masonry with devastating efficiency. The 3.6kg forged steel head delivers tremendous impact force concentrated through a hardened striking face that resists chipping and mushrooming. A 900mm fiberglass handle provides excellent shock absorption, superior reach, and the flexibility needed to generate maximum swing velocity. Anti-vibration technology embedded in the handle dampens recoil forces, significantly reducing operator fatigue during extended demolition sessions. The overmolded grip zone prevents the handle from twisting or slipping out of sweaty or gloved hands during overhead swings. Built for construction workers, landscapers, and demolition crews who demand professional-grade striking tools that perform reliably under the most punishing conditions.",
+    +           "id": 10,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Sledgehammer",
+    +           "price": 17.75,
+    +           "product_image_id": 10,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 10,
+    +         "quantity": 1,
+    +         "unit_price": 7.75,
+    +       },
+    +       Object {
+    +         "id": 11,
+    +         "invoice_id": 5,
+    +         "product": Object {
+    +           "brand_id": 2,
+    +           "category_id": 7,
+    +           "co2_rating": "D",
+    +           "description": "Adjustable slip joint pliers that feature a two-position pivot mechanism for switching between regular and wide jaw openings to accommodate different fastener sizes. The PVC-coated handles offer a comfortable, non-slip grip while the precisely machined jaws securely grasp round, flat, and hexagonal objects without slipping. Constructed from durable drop-forged carbon steel that has been heat-treated to withstand heavy daily use in professional environments. The curved jaw section grips pipes and cylindrical objects, while the flat front surface handles nuts, bolts, and sheet materials. A wire cutter integrated near the pivot handles light cutting tasks without reaching for a separate tool. Perfect for plumbing, automotive, HVAC, and general maintenance work where a single versatile gripping tool saves time.",
+    +           "id": 5,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Slip Joint Pliers",
+    +           "price": 9.17,
+    +           "product_image_id": 5,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 5,
+    +         "quantity": 1,
+    +         "unit_price": 9.17,
+    +       },
+    +     ],
+    +     "payment_account_name": "Tester",
+    +     "payment_account_number": "09876543ABC",
+    +     "payment_method": "Cash on Delivery",
+    +     "status": "COMPLETED",
+    +     "status_message": null,
+    +     "total": 27.11,
+    +     "user_id": 2,
+    +   },
+    +   Object {
+    +     "billing_address": "Midway Road 123",
+    +     "billing_city": "Springdale",
+    +     "billing_country": "United States",
+    +     "billing_postcode": 72764,
+    +     "billing_state": "Arkansas",
+    +     "id": 8,
+    +     "invoice_date": "2021-10-30 22:04:47",
+    +     "invoice_number": "INV-2021000003",
+    +     "invoicelines": Array [
+    +       Object {
+    +         "id": 15,
+    +         "invoice_id": 8,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 10,
+    +           "co2_rating": "D",
+    +           "description": "Portable circular saw powered by a robust 1400W motor that drives a 190mm carbide-tipped blade at 5,500 RPM for clean, fast, straight cuts through solid timber, plywood, MDF, and sheet materials up to 67mm thick. The precision-machined aluminum base plate provides a flat, stable reference surface and adjusts smoothly for bevel cuts from 0 to 45 degrees with a positive detent at the most commonly used angles. An integrated dust blower directs a stream of air ahead of the blade to keep the pencil line visible under the constant shower of sawdust generated during cutting. The spindle lock allows quick, safe blade changes with a single wrench, while the electric brake stops the blade within seconds of releasing the trigger for added safety between cuts. An ergonomic soft-grip main handle and auxiliary front handle provide confident two-handed control for both plunge cuts and guided rip cuts. Essential for framing carpenters, renovation contractors, and DIY builders who need a portable, powerful saw for on-site timber work.",
+    +           "id": 21,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Circular Saw",
+    +           "price": 80.19,
+    +           "product_image_id": 21,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 21,
+    +         "quantity": 1,
+    +         "unit_price": 10.19,
+    +       },
+    +       Object {
+    +         "id": 16,
+    +         "invoice_id": 8,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 3,
+    +           "co2_rating": "D",
+    +           "description": "Powerful sledgehammer designed for heavy demolition, driving stakes, breaking concrete, and splitting masonry with devastating efficiency. The 3.6kg forged steel head delivers tremendous impact force concentrated through a hardened striking face that resists chipping and mushrooming. A 900mm fiberglass handle provides excellent shock absorption, superior reach, and the flexibility needed to generate maximum swing velocity. Anti-vibration technology embedded in the handle dampens recoil forces, significantly reducing operator fatigue during extended demolition sessions. The overmolded grip zone prevents the handle from twisting or slipping out of sweaty or gloved hands during overhead swings. Built for construction workers, landscapers, and demolition crews who demand professional-grade striking tools that perform reliably under the most punishing conditions.",
+    +           "id": 10,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Sledgehammer",
+    +           "price": 17.75,
+    +           "product_image_id": 10,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 10,
+    +         "quantity": 1,
+    +         "unit_price": 7.75,
+    +       },
+    +       Object {
+    +         "id": 17,
+    +         "invoice_id": 8,
+    +         "product": Object {
+    +           "brand_id": 2,
+    +           "category_id": 7,
+    +           "co2_rating": "D",
+    +           "description": "Adjustable slip joint pliers that feature a two-position pivot mechanism for switching between regular and wide jaw openings to accommodate different fastener sizes. The PVC-coated handles offer a comfortable, non-slip grip while the precisely machined jaws securely grasp round, flat, and hexagonal objects without slipping. Constructed from durable drop-forged carbon steel that has been heat-treated to withstand heavy daily use in professional environments. The curved jaw section grips pipes and cylindrical objects, while the flat front surface handles nuts, bolts, and sheet materials. A wire cutter integrated near the pivot handles light cutting tasks without reaching for a separate tool. Perfect for plumbing, automotive, HVAC, and general maintenance work where a single versatile gripping tool saves time.",
+    +           "id": 5,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Slip Joint Pliers",
+    +           "price": 9.17,
+    +           "product_image_id": 5,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 5,
+    +         "quantity": 1,
+    +         "unit_price": 9.17,
+    +       },
+    +     ],
+    +     "payment_account_name": "Tester",
+    +     "payment_account_number": "09876543ABC",
+    +     "payment_method": "Cash on Delivery",
+    +     "status": "COMPLETED",
+    +     "status_message": null,
+    +     "total": 27.11,
+    +     "user_id": 3,
+    +   },
+    +   Object {
+    +     "billing_address": "Test street 123",
+    +     "billing_city": "Brussels",
+    +     "billing_country": "Belgium",
+    +     "billing_postcode": "1122AB",
+    +     "billing_state": "Brussels",
+    +     "id": 4,
+    +     "invoice_date": "2021-09-25 22:04:47",
+    +     "invoice_number": "INV-2021000001",
+    +     "invoicelines": Array [
+    +       Object {
+    +         "id": 8,
+    +         "invoice_id": 4,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 11,
+    +           "co2_rating": "B",
+    +           "description": "Compact and lightweight 18V cordless drill offering 50Nm of torque in a well-balanced package that reduces operator fatigue during extended overhead, horizontal, and downward drilling and driving tasks. The 3.0Ah lithium-ion battery provides ample capacity for a busy day of residential drilling and driving, while the fast charger replenishes a depleted battery in under 60 minutes. A 10mm keyless chuck handles the most commonly used drill bits, spade bits, and quarter-inch hex driver inserts for everyday workshop and job site tasks. The ergonomic soft-grip handle and compact head length provide comfortable, controlled operation in tight spaces where larger drills cannot reach. An integrated LED work light illuminates the work surface for improved accuracy when driving screws in dimly lit areas. A great all-around cordless drill for home improvement, furniture assembly, deck building, and light-duty trade work where portability and comfort are priorities.",
+    +           "id": 25,
+    +           "is_eco_friendly": false,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Cordless Drill 18V",
+    +           "price": 119.24,
+    +           "product_image_id": 25,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 25,
+    +         "quantity": 1,
+    +         "unit_price": 19.24,
+    +       },
+    +     ],
+    +     "payment_account_name": "Tester",
+    +     "payment_account_number": "09876543ABC",
+    +     "payment_method": "Bank Transfer",
+    +     "status": "ON_HOLD",
+    +     "status_message": null,
+    +     "total": 19.24,
+    +     "user_id": 2,
+    +   },
+    +   Object {
+    +     "billing_address": "Test street 123",
+    +     "billing_city": "Utrecht",
+    +     "billing_country": "The Netherlands",
+    +     "billing_postcode": "1122AB",
+    +     "billing_state": "Utrecht",
+    +     "id": 2,
+    +     "invoice_date": "2020-07-16 22:04:47",
+    +     "invoice_number": "INV-2020000001",
+    +     "invoicelines": Array [
+    +       Object {
+    +         "id": 4,
+    +         "invoice_id": 2,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 5,
+    +           "co2_rating": "D",
+    +           "description": "Chrome vanadium steel adjustable wrench with a smooth-action worm gear jaw mechanism that opens to a generous 30mm capacity for versatile bolt, nut, and fitting work. The precision-machined worm gear ensures the movable jaw stays firmly locked in position under heavy torque loads, eliminating the slipping and rounding common with lesser tools. Laser-etched metric and imperial scales on the jaw face allow for quick size identification without a separate caliper or ruler. The slim-profile head design fits into recessed areas and tight clearances where a standard box wrench cannot reach. A corrosion-resistant chrome finish protects against rust and makes the wrench easy to wipe clean after greasy jobs. A workshop essential for plumbers, mechanics, and assembly technicians who work with multiple fastener sizes throughout the day.",
+    +           "id": 14,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Adjustable Wrench",
+    +           "price": 20.33,
+    +           "product_image_id": 14,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 14,
+    +         "quantity": 1,
+    +         "unit_price": 20.33,
+    +       },
+    +       Object {
+    +         "id": 5,
+    +         "invoice_id": 2,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 5,
+    +           "co2_rating": "D",
+    +           "description": "Offset angled spanner specifically designed to reach bolts, nuts, and fittings in recessed, obstructed, or deeply set locations where a straight wrench simply cannot fit or turn. Made from chrome vanadium steel with a satin-chrome finish for excellent corrosion resistance, easy cleaning, and professional appearance. The 15-degree offset angle at both ends provides ample knuckle clearance while maintaining full torque transfer to the fastener without slipping. By flipping the spanner over between turns, you can work in spaces with as little as 30 degrees of swing arc. The slim jaw profile fits into narrow gaps alongside adjacent components without interference. Indispensable for automotive mechanics working in engine bays, appliance repair technicians accessing internal components, and industrial maintenance engineers servicing tightly packed machinery.",
+    +           "id": 15,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 1,
+    +           "is_rental": 0,
+    +           "name": "Angled Spanner",
+    +           "price": 14.14,
+    +           "product_image_id": 15,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 15,
+    +         "quantity": 1,
+    +         "unit_price": 14.14,
+    +       },
+    +     ],
+    +     "payment_account_name": "Tester",
+    +     "payment_account_number": "09876543ABC",
+    +     "payment_method": "Cash on Delivery",
+    +     "status": "COMPLETED",
+    +     "status_message": null,
+    +     "total": 34.47,
+    +     "user_id": 2,
+    +   },
+    +   Object {
+    +     "billing_address": "Test street 123",
+    +     "billing_city": "Utrecht",
+    +     "billing_country": "The Netherlands",
+    +     "billing_postcode": "1122AB",
+    +     "billing_state": "Utrecht",
+    +     "id": 3,
+    +     "invoice_date": "2020-03-20 22:04:47",
+    +     "invoice_number": "INV-2020000002",
+    +     "invoicelines": Array [
+    +       Object {
+    +         "id": 6,
+    +         "invoice_id": 3,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 6,
+    +           "co2_rating": "C",
+    +           "description": "Precision mini screwdriver with a PH0 tip designed specifically for working with small screws found in electronics, eyeglasses, watches, camera equipment, and detailed hobby projects. The carbon steel blade is hardened and tempered to maintain an accurate tip profile through thousands of insertions in delicate threaded fasteners. A freely rotating end cap allows single-handed operation by applying downward pressure with your index finger while your thumb and middle finger turn the barrel. The knurled aluminum barrel provides a secure, non-slip grip for fine adjustments requiring minimal torque. At just 150mm overall length, this screwdriver fits easily in a shirt pocket, precision tool roll, or electronics repair kit. An essential tool for IT technicians, jewelers, model builders, and anyone who works with miniature components.",
+    +           "id": 18,
+    +           "is_eco_friendly": false,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Mini Screwdriver",
+    +           "price": 13.96,
+    +           "product_image_id": 18,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 18,
+    +         "quantity": 1,
+    +         "unit_price": 13.96,
+    +       },
+    +       Object {
+    +         "id": 7,
+    +         "invoice_id": 3,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 4,
+    +           "co2_rating": "B",
+    +           "description": "Traditional hand saw crafted with a high carbon steel blade featuring 7 teeth per inch for efficient crosscutting and ripping of timber, plywood, and composite boards. The 500mm blade length handles standard dimensional lumber, sheet goods, and tree branches with smooth, clean cuts that require minimal sanding afterward. Each tooth is precision-set and hardened to stay sharp through hundreds of cuts in both softwood and hardwood species. A comfortable contoured wooden handle provides a secure three-finger grip and natural wrist alignment that reduces fatigue during extended cutting sessions. The taper-ground blade is thinner at the back than at the teeth, reducing friction and binding during deep cuts. Essential for carpenters, woodworkers, and gardeners who appreciate the precision, quiet operation, and portability of a quality hand saw.",
+    +           "id": 13,
+    +           "is_eco_friendly": false,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Wood Saw",
+    +           "price": 12.18,
+    +           "product_image_id": 13,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 13,
+    +         "quantity": 1,
+    +         "unit_price": 2.18,
+    +       },
+    +     ],
+    +     "payment_account_name": "Tester",
+    +     "payment_account_number": "09876543ABC",
+    +     "payment_method": "Cash on Delivery",
+    +     "status": "COMPLETED",
+    +     "status_message": null,
+    +     "total": 16.14,
+    +     "user_id": 2,
+    +   },
+    +   Object {
+    +     "billing_address": "Test street 123",
+    +     "billing_city": "Utrecht",
+    +     "billing_country": "The Netherlands",
+    +     "billing_postcode": "1122AB",
+    +     "billing_state": "Utrecht",
+    +     "id": 1,
+    +     "invoice_date": "2019-04-05 22:04:47",
+    +     "invoice_number": "INV-2019000001",
+    +     "invoicelines": Array [
+    +       Object {
+    +         "id": 1,
+    +         "invoice_id": 1,
+    +         "product": Object {
+    +           "brand_id": 2,
+    +           "category_id": 7,
+    +           "co2_rating": "D",
+    +           "description": "Heavy-duty bolt cutters engineered to slice through hardened bolts, chains, padlocks, and wire fencing with minimal effort. The compound leverage mechanism multiplies your cutting force by a factor of 30, enabling clean cuts through materials up to 10mm in diameter. Hardened alloy steel blades are precisely ground and heat-treated to maintain a sharp edge through years of repeated use on tough materials. Ergonomic rubber grips and the generous 750mm handle length provide excellent control, leverage, and reach during overhead or awkward-angle cuts. An adjustable blade tension screw lets you fine-tune the jaw alignment for optimal cutting performance. Built for demolition crews, locksmiths, fencing contractors, and maintenance professionals who need reliable cutting power day after day.",
+    +           "id": 3,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 1,
+    +           "is_rental": 0,
+    +           "name": "Bolt Cutters",
+    +           "price": 48.41,
+    +           "product_image_id": 3,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 3,
+    +         "quantity": 1,
+    +         "unit_price": 8.41,
+    +       },
+    +       Object {
+    +         "id": 2,
+    +         "invoice_id": 1,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 7,
+    +           "co2_rating": "D",
+    +           "description": "Versatile combination pliers designed for gripping, bending, and cutting wire with ease. Featuring chrome vanadium steel construction with induction-hardened cutting edges, these pliers deliver excellent grip and leverage for a wide range of tasks. The precision-machined jaws combine flat gripping surfaces with a pipe-grip section and integrated wire cutter for true multi-purpose functionality. Ergonomic bi-component handles reduce hand fatigue during extended use and provide a secure hold even with oily or gloved hands. The joint is precisely fitted to eliminate play and ensure smooth operation over thousands of cycles. Ideal for electricians, mechanics, and DIY enthusiasts tackling everyday projects around the workshop or job site.",
+    +           "id": 1,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 0,
+    +           "is_rental": 0,
+    +           "name": "Combination Pliers",
+    +           "price": 14.15,
+    +           "product_image_id": 1,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 1,
+    +         "quantity": 1,
+    +         "unit_price": 14.15,
+    +       },
+    +       Object {
+    +         "id": 3,
+    +         "invoice_id": 1,
+    +         "product": Object {
+    +           "brand_id": 1,
+    +           "category_id": 3,
+    +           "co2_rating": "D",
+    +           "description": "Traditional claw hammer with a polished carbon steel head engineered for driving and removing nails with precision and confidence. The rubber-wrapped handle provides a secure, comfortable grip even in wet, dusty, or cold conditions where bare metal or wood handles would slip. At 500g, it offers the ideal balance between striking power and maneuverability for general carpentry, framing, and construction tasks. The curved claw design allows for smooth nail extraction without gouging or marring wood surfaces, protecting your finished work. The head-to-handle connection uses an epoxy-bonded wedge system that prevents loosening over time. A reliable, no-nonsense tool that professional carpenters and weekend builders alike reach for every day.",
+    +           "id": 8,
+    +           "is_eco_friendly": true,
+    +           "is_location_offer": 1,
+    +           "is_rental": 0,
+    +           "name": "Claw Hammer",
+    +           "price": 11.48,
+    +           "product_image_id": 8,
+    +           "stock": 11,
+    +         },
+    +         "product_id": 8,
+    +         "quantity": 1,
+    +         "unit_price": 11.48,
+    +       },
+    +     ],
+    +     "payment_account_name": "Tester",
+    +     "payment_account_number": "09876543ABC",
+    +     "payment_method": "Cash on Delivery",
+    +     "status": "COMPLETED",
+    +     "status_message": null,
+    +     "total": 34.04,
+    +     "user_id": 2,
+    +   },
+    + ]
+
+      42 |     });
+      43 |     expect(inv.status()).toBe(200);
+    > 44 |     expect((await inv.json()).data).toEqual([]);
+         |                                     ^
+      45 |   });
+      46 | });
+      47 |
+        at /home/h/qa-practice/tests/api/auth.api.spec.ts:44:37
+
+    Error Context: test-results/api-auth.api-API---authent-409b4-heir-own-non-secret-profile-with-bugs/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api-auth.api-API---authent-409b4-heir-own-non-secret-profile-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api-auth.api-API---authent-409b4-heir-own-non-secret-profile-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [with-bugs] › tests/cart.spec.ts:10:3 › Product page and cart › TC-05 "+" button increases the quantity from 1 to 2 
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator:  getByTestId('quantity')
+    Expected: "2"
+    Received: "1"
+    Timeout:  7000ms
+
+    Call log:
+      - Expect "toHaveValue" getByTestId('quantity') with timeout 7000ms
+      - waiting for getByTestId('quantity')
+        18 × locator resolved to <input min="1" max="99" type="number" data-test="quantity" _ngcontent-ng-c3647752369="" class="form-control ng-untouched ng-pristine ng-valid"/>
+           - unexpected value "1"
+
+
+      12 |     await expect(page.getByTestId('quantity')).toHaveValue('1');
+      13 |     await page.getByTestId('increase-quantity').click();
+    > 14 |     await expect(page.getByTestId('quantity')).toHaveValue('2');
+         |                                                ^
+      15 |   });
+      16 |
+      17 |   test('TC-06 adding a product shows a success message and updates the cart badge', async ({ page }) => {
+        at /home/h/qa-practice/tests/cart.spec.ts:14:48
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-8c09a-es-the-quantity-from-1-to-2-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/cart-Product-page-and-cart-8c09a-es-the-quantity-from-1-to-2-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-8c09a-es-the-quantity-from-1-to-2-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/cart-Product-page-and-cart-8c09a-es-the-quantity-from-1-to-2-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [with-bugs] › tests/cart.spec.ts:17:3 › Product page and cart › TC-06 adding a product shows a success message and updates the cart badge 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('alert')
+    Expected substring: "Product added to shopping cart"
+    Timeout: 7000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" getByRole('alert') with timeout 7000ms
+      - waiting for getByRole('alert')
+        3 × locator resolved to <ngb-toast role="alert" aria-atomic="true" aria-live="polite" class="toast bg-danger text-light fade show showing">…</ngb-toast>
+          - unexpected value " Oeps, something went wrong. "
+        7 × locator resolved to <ngb-toast role="alert" aria-atomic="true" aria-live="polite" class="toast bg-danger text-light fade show">…</ngb-toast>
+          - unexpected value " Oeps, something went wrong. "
+
+
+      18 |     await openFirstProduct(page);
+      19 |     await page.getByTestId('add-to-cart').click();
+    > 20 |     await expect(page.getByRole('alert')).toContainText('Product added to shopping cart');
+         |                                           ^
+      21 |     await expect(page.getByTestId('cart-quantity')).toHaveText('1');
+      22 |   });
+      23 |
+        at /home/h/qa-practice/tests/cart.spec.ts:20:43
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-e18ab--and-updates-the-cart-badge-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/cart-Product-page-and-cart-e18ab--and-updates-the-cart-badge-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-e18ab--and-updates-the-cart-badge-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/cart-Product-page-and-cart-e18ab--and-updates-the-cart-badge-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [with-bugs] › tests/cart.spec.ts:24:3 › Product page and cart › TC-07 cart line total equals unit price x quantity 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('line-price')
+    Expected: "$42.45"
+    Received: "$00.00"
+    Timeout:  7000ms
+
+    Call log:
+      - Expect "toHaveText" getByTestId('line-price') with timeout 7000ms
+      - waiting for getByTestId('line-price')
+        18 × locator resolved to <td data-test="line-price" _ngcontent-ng-c1226357352="" class="col-md-2 align-middle">$00.00</td>
+           - unexpected value "$00.00"
+
+
+      31 |     await expect(page.getByTestId('product-quantity')).toHaveValue('3');
+      32 |     const expected = `$${(unit * 3).toFixed(2)}`;
+    > 33 |     await expect(page.getByTestId('line-price')).toHaveText(expected);
+         |                                                  ^
+      34 |     await expect(page.getByTestId('cart-total')).toHaveText(expected);
+      35 |   });
+      36 | });
+        at /home/h/qa-practice/tests/cart.spec.ts:33:50
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-ccc5b-quals-unit-price-x-quantity-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/cart-Product-page-and-cart-ccc5b-quals-unit-price-x-quantity-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-ccc5b-quals-unit-price-x-quantity-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/cart-Product-page-and-cart-ccc5b-quals-unit-price-x-quantity-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [with-bugs] › tests/catalog.spec.ts:19:3 › Catalog › TC-02 sorting by "Price (Low - High)" shows ascending prices 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 8
+    + Received  + 8
+
+      Array [
+    -   46.5,
+    -   48.41,
+    -   58.48,
+    -   66.54,
+    -   73.59,
+    -   80.19,
+    -   100.79,
+    -   119.24,
+        125.23,
+    +   119.24,
+    +   100.79,
+    +   80.19,
+    +   73.59,
+    +   66.54,
+    +   58.48,
+    +   48.41,
+    +   46.5,
+      ]
+
+      26 |       .not.toBe(before.join());
+      27 |     const prices = (await page.getByTestId('product-price').allTextContents()).map(money);
+    > 28 |     expect(prices).toEqual([...prices].sort((a, b) => a - b));
+         |                    ^
+      29 |   });
+      30 |
+      31 |   test('TC-03 searching "hammer" returns only hammers', async ({ page }) => {
+        at /home/h/qa-practice/tests/catalog.spec.ts:28:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/catalog-Catalog-TC-02-sort-a68a5-High-shows-ascending-prices-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/catalog-Catalog-TC-02-sort-a68a5-High-shows-ascending-prices-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/catalog-Catalog-TC-02-sort-a68a5-High-shows-ascending-prices-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/catalog-Catalog-TC-02-sort-a68a5-High-shows-ascending-prices-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [with-bugs] › tests/catalog.spec.ts:48:3 › Catalog › TC-04 main navigation labels are correct ─
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('nav-contact')
+    Expected: "Contact"
+    Received: "Contakt"
+    Timeout:  7000ms
+
+    Call log:
+      - Expect "soft toHaveText" getByTestId('nav-contact') with timeout 7000ms
+      - waiting for getByTestId('nav-contact')
+        18 × locator resolved to <a class="nav-link" href="#/contact" routerlink="/contact" data-test="nav-contact" _ngcontent-ng-c2781432996="">Contakt</a>
+           - unexpected value "Contakt"
+
+
+      49 |     await openHome(page);
+      50 |     // soft: record a failure but keep going, so one wrong label cannot hide another
+    > 51 |     await expect.soft(page.getByTestId('nav-contact')).toHaveText('Contact');
+         |                                                        ^
+      52 |     await page.getByTestId('nav-categories').click();
+      53 |     const items = (await page.locator('nav .dropdown-menu a').allTextContents()).map((s) => s.trim());
+      54 |     expect(items.join(' | ')).not.toMatch(/undefined|null|NaN/i);
+        at /home/h/qa-practice/tests/catalog.spec.ts:51:56
+
+    Error: expect(received).not.toMatch(expected)
+
+    Expected pattern: not /undefined|null|NaN/i
+    Received string:      "Hand Tools | Power Tools | UNDEFINED | Chainsaws | Rentals"
+
+      52 |     await page.getByTestId('nav-categories').click();
+      53 |     const items = (await page.locator('nav .dropdown-menu a').allTextContents()).map((s) => s.trim());
+    > 54 |     expect(items.join(' | ')).not.toMatch(/undefined|null|NaN/i);
+         |                                   ^
+      55 |   });
+      56 | });
+      57 |
+        at /home/h/qa-practice/tests/catalog.spec.ts:54:35
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/catalog-Catalog-TC-04-main-navigation-labels-are-correct-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/catalog-Catalog-TC-04-main-navigation-labels-are-correct-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/catalog-Catalog-TC-04-main-navigation-labels-are-correct-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/catalog-Catalog-TC-04-main-navigation-labels-are-correct-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [with-bugs] › tests/checkout.spec.ts:5:3 › Checkout (logged-in user, end to end) › E2E-01 a logged-in customer can buy a product and sees the invoice in their account › sign in through the UI 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('nav-menu')
+    Expected substring: "Test Runner"
+    Timeout: 7000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" getByTestId('nav-menu') with timeout 7000ms
+      - waiting for getByTestId('nav-menu')
+
+
+      17 |       await page.getByTestId('login-submit').click();
+      18 |       await expect(page).toHaveURL(/account/);
+    > 19 |       await expect(page.getByTestId('nav-menu')).toContainText(`${user.firstName} ${user.lastName}`);
+         |                                                  ^
+      20 |     });
+      21 |
+      22 |     const expectedTotal = await test.step('add 2 units of the first product to the cart', async () => {
+        at /home/h/qa-practice/tests/checkout.spec.ts:19:50
+        at /home/h/qa-practice/tests/checkout.spec.ts:12:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/checkout-Checkout-logged-i-fc209-he-invoice-in-their-account-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/checkout-Checkout-logged-i-fc209-he-invoice-in-their-account-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/checkout-Checkout-logged-i-fc209-he-invoice-in-their-account-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/checkout-Checkout-logged-i-fc209-he-invoice-in-their-account-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8 failed
+    [with-bugs] › tests/api/auth.api.spec.ts:11:3 › API - authentication and authorization › API-06 GET /invoices without a token is rejected (401) 
+    [with-bugs] › tests/api/auth.api.spec.ts:24:3 › API - authentication and authorization › API-08 a new user can log in and read only their own, non-secret profile 
+    [with-bugs] › tests/cart.spec.ts:10:3 › Product page and cart › TC-05 "+" button increases the quantity from 1 to 2 
+    [with-bugs] › tests/cart.spec.ts:17:3 › Product page and cart › TC-06 adding a product shows a success message and updates the cart badge 
+    [with-bugs] › tests/cart.spec.ts:24:3 › Product page and cart › TC-07 cart line total equals unit price x quantity 
+    [with-bugs] › tests/catalog.spec.ts:19:3 › Catalog › TC-02 sorting by "Price (Low - High)" shows ascending prices 
+    [with-bugs] › tests/catalog.spec.ts:48:3 › Catalog › TC-04 main navigation labels are correct ──
+    [with-bugs] › tests/checkout.spec.ts:5:3 › Checkout (logged-in user, end to end) › E2E-01 a logged-in customer can buy a product and sees the invoice in their account 
+  2 skipped
+  30 passed (3.4m)

@@ -1,0 +1,252 @@
+
+Running 18 tests using 2 workers
+
+  ✓   1 [reference] › tests/catalog.spec.ts:11:3 › Catalog › TC-01 home page lists 9 products, each with a name and a price (3.7s)
+  ✓   2 [reference] › tests/cart.spec.ts:10:3 › Product page and cart › TC-05 "+" button increases the quantity from 1 to 2 (4.1s)
+  ✓   3 [reference] › tests/catalog.spec.ts:19:3 › Catalog › TC-02 sorting by "Price (Low - High)" shows ascending prices (2.7s)
+  ✓   4 [reference] › tests/cart.spec.ts:17:3 › Product page and cart › TC-06 adding a product shows a success message and updates the cart badge (4.1s)
+  ✓   5 [reference] › tests/catalog.spec.ts:31:3 › Catalog › TC-03 searching "hammer" returns only hammers (3.0s)
+  ✓   7 [reference] › tests/catalog.spec.ts:48:3 › Catalog › TC-04 main navigation labels are correct (2.4s)
+  ✓   8 [reference] › tests/forms.spec.ts:4:3 › Forms (negative tests) › TC-08 contact form rejects an empty submission (2.2s)
+  ✓   6 [reference] › tests/cart.spec.ts:24:3 › Product page and cart › TC-07 cart line total equals unit price x quantity (6.0s)
+  ✓   9 [reference] › tests/forms.spec.ts:13:3 › Forms (negative tests) › TC-09 login with a wrong password is rejected with a clear message (2.5s)
+  ✓  11 [with-bugs] › tests/catalog.spec.ts:11:3 › Catalog › TC-01 home page lists 9 products, each with a name and a price (2.0s)
+  ✘  12 [with-bugs] › tests/catalog.spec.ts:19:3 › Catalog › TC-02 sorting by "Price (Low - High)" shows ascending prices (2.7s)
+  ✘  10 [with-bugs] › tests/cart.spec.ts:10:3 › Product page and cart › TC-05 "+" button increases the quantity from 1 to 2 (9.9s)
+  ✓  13 [with-bugs] › tests/catalog.spec.ts:31:3 › Catalog › TC-03 searching "hammer" returns only hammers (2.8s)
+  ✘  14 [with-bugs] › tests/catalog.spec.ts:48:3 › Catalog › TC-04 main navigation labels are correct (9.4s)
+  ✘  15 [with-bugs] › tests/cart.spec.ts:17:3 › Product page and cart › TC-06 adding a product shows a success message and updates the cart badge (10.5s)
+  ✓  16 [with-bugs] › tests/forms.spec.ts:4:3 › Forms (negative tests) › TC-08 contact form rejects an empty submission (2.0s)
+  ✓  18 [with-bugs] › tests/forms.spec.ts:13:3 › Forms (negative tests) › TC-09 login with a wrong password is rejected with a clear message (3.3s)
+  ✘  17 [with-bugs] › tests/cart.spec.ts:24:3 › Product page and cart › TC-07 cart line total equals unit price x quantity (10.4s)
+
+
+  1) [with-bugs] › tests/cart.spec.ts:10:3 › Product page and cart › TC-05 "+" button increases the quantity from 1 to 2 
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator:  getByTestId('quantity')
+    Expected: "2"
+    Received: "1"
+    Timeout:  7000ms
+
+    Call log:
+      - Expect "toHaveValue" getByTestId('quantity') with timeout 7000ms
+      - waiting for getByTestId('quantity')
+        18 × locator resolved to <input min="1" max="99" type="number" data-test="quantity" _ngcontent-ng-c3647752369="" class="form-control ng-untouched ng-pristine ng-valid"/>
+           - unexpected value "1"
+
+
+      12 |     await expect(page.getByTestId('quantity')).toHaveValue('1');
+      13 |     await page.getByTestId('increase-quantity').click();
+    > 14 |     await expect(page.getByTestId('quantity')).toHaveValue('2');
+         |                                                ^
+      15 |   });
+      16 |
+      17 |   test('TC-06 adding a product shows a success message and updates the cart badge', async ({ page }) => {
+        at /home/h/qa-practice/tests/cart.spec.ts:14:48
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-8c09a-es-the-quantity-from-1-to-2-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/cart-Product-page-and-cart-8c09a-es-the-quantity-from-1-to-2-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-8c09a-es-the-quantity-from-1-to-2-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/cart-Product-page-and-cart-8c09a-es-the-quantity-from-1-to-2-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [with-bugs] › tests/cart.spec.ts:17:3 › Product page and cart › TC-06 adding a product shows a success message and updates the cart badge 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('alert')
+    Expected substring: "Product added to shopping cart"
+    Timeout: 7000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" getByRole('alert') with timeout 7000ms
+      - waiting for getByRole('alert')
+        3 × locator resolved to <ngb-toast role="alert" aria-atomic="true" aria-live="polite" class="toast bg-danger text-light fade show showing">…</ngb-toast>
+          - unexpected value " Oeps, something went wrong. "
+        7 × locator resolved to <ngb-toast role="alert" aria-atomic="true" aria-live="polite" class="toast bg-danger text-light fade show">…</ngb-toast>
+          - unexpected value " Oeps, something went wrong. "
+
+
+      18 |     await openFirstProduct(page);
+      19 |     await page.getByTestId('add-to-cart').click();
+    > 20 |     await expect(page.getByRole('alert')).toContainText('Product added to shopping cart');
+         |                                           ^
+      21 |     await expect(page.getByTestId('cart-quantity')).toHaveText('1');
+      22 |   });
+      23 |
+        at /home/h/qa-practice/tests/cart.spec.ts:20:43
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-e18ab--and-updates-the-cart-badge-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/cart-Product-page-and-cart-e18ab--and-updates-the-cart-badge-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-e18ab--and-updates-the-cart-badge-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/cart-Product-page-and-cart-e18ab--and-updates-the-cart-badge-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [with-bugs] › tests/cart.spec.ts:24:3 › Product page and cart › TC-07 cart line total equals unit price x quantity 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('line-price')
+    Expected: "$42.45"
+    Received: "$00.00"
+    Timeout:  7000ms
+
+    Call log:
+      - Expect "toHaveText" getByTestId('line-price') with timeout 7000ms
+      - waiting for getByTestId('line-price')
+        18 × locator resolved to <td data-test="line-price" _ngcontent-ng-c1226357352="" class="col-md-2 align-middle">$00.00</td>
+           - unexpected value "$00.00"
+
+
+      31 |     await expect(page.getByTestId('product-quantity')).toHaveValue('3');
+      32 |     const expected = `$${(unit * 3).toFixed(2)}`;
+    > 33 |     await expect(page.getByTestId('line-price')).toHaveText(expected);
+         |                                                  ^
+      34 |     await expect(page.getByTestId('cart-total')).toHaveText(expected);
+      35 |   });
+      36 | });
+        at /home/h/qa-practice/tests/cart.spec.ts:33:50
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-ccc5b-quals-unit-price-x-quantity-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/cart-Product-page-and-cart-ccc5b-quals-unit-price-x-quantity-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/cart-Product-page-and-cart-ccc5b-quals-unit-price-x-quantity-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/cart-Product-page-and-cart-ccc5b-quals-unit-price-x-quantity-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [with-bugs] › tests/catalog.spec.ts:19:3 › Catalog › TC-02 sorting by "Price (Low - High)" shows ascending prices 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 8
+    + Received  + 8
+
+      Array [
+    -   46.5,
+    -   48.41,
+    -   58.48,
+    -   66.54,
+    -   73.59,
+    -   80.19,
+    -   100.79,
+    -   119.24,
+        125.23,
+    +   119.24,
+    +   100.79,
+    +   80.19,
+    +   73.59,
+    +   66.54,
+    +   58.48,
+    +   48.41,
+    +   46.5,
+      ]
+
+      26 |       .not.toBe(before.join());
+      27 |     const prices = (await page.getByTestId('product-price').allTextContents()).map(money);
+    > 28 |     expect(prices).toEqual([...prices].sort((a, b) => a - b));
+         |                    ^
+      29 |   });
+      30 |
+      31 |   test('TC-03 searching "hammer" returns only hammers', async ({ page }) => {
+        at /home/h/qa-practice/tests/catalog.spec.ts:28:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/catalog-Catalog-TC-02-sort-a68a5-High-shows-ascending-prices-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/catalog-Catalog-TC-02-sort-a68a5-High-shows-ascending-prices-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/catalog-Catalog-TC-02-sort-a68a5-High-shows-ascending-prices-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/catalog-Catalog-TC-02-sort-a68a5-High-shows-ascending-prices-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [with-bugs] › tests/catalog.spec.ts:48:3 › Catalog › TC-04 main navigation labels are correct ─
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('nav-contact')
+    Expected: "Contact"
+    Received: "Contakt"
+    Timeout:  7000ms
+
+    Call log:
+      - Expect "soft toHaveText" getByTestId('nav-contact') with timeout 7000ms
+      - waiting for getByTestId('nav-contact')
+        18 × locator resolved to <a class="nav-link" href="#/contact" routerlink="/contact" data-test="nav-contact" _ngcontent-ng-c2781432996="">Contakt</a>
+           - unexpected value "Contakt"
+
+
+      49 |     await openHome(page);
+      50 |     // soft: record a failure but keep going, so one wrong label cannot hide another
+    > 51 |     await expect.soft(page.getByTestId('nav-contact')).toHaveText('Contact');
+         |                                                        ^
+      52 |     await page.getByTestId('nav-categories').click();
+      53 |     const items = (await page.locator('nav .dropdown-menu a').allTextContents()).map((s) => s.trim());
+      54 |     expect(items.join(' | ')).not.toMatch(/undefined|null|NaN/i);
+        at /home/h/qa-practice/tests/catalog.spec.ts:51:56
+
+    Error: expect(received).not.toMatch(expected)
+
+    Expected pattern: not /undefined|null|NaN/i
+    Received string:      "Hand Tools | Power Tools | UNDEFINED | Chainsaws | Rentals"
+
+      52 |     await page.getByTestId('nav-categories').click();
+      53 |     const items = (await page.locator('nav .dropdown-menu a').allTextContents()).map((s) => s.trim());
+    > 54 |     expect(items.join(' | ')).not.toMatch(/undefined|null|NaN/i);
+         |                                   ^
+      55 |   });
+      56 | });
+      57 |
+        at /home/h/qa-practice/tests/catalog.spec.ts:54:35
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/catalog-Catalog-TC-04-main-navigation-labels-are-correct-with-bugs/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/catalog-Catalog-TC-04-main-navigation-labels-are-correct-with-bugs/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/catalog-Catalog-TC-04-main-navigation-labels-are-correct-with-bugs/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/catalog-Catalog-TC-04-main-navigation-labels-are-correct-with-bugs/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [with-bugs] › tests/cart.spec.ts:10:3 › Product page and cart › TC-05 "+" button increases the quantity from 1 to 2 
+    [with-bugs] › tests/cart.spec.ts:17:3 › Product page and cart › TC-06 adding a product shows a success message and updates the cart badge 
+    [with-bugs] › tests/cart.spec.ts:24:3 › Product page and cart › TC-07 cart line total equals unit price x quantity 
+    [with-bugs] › tests/catalog.spec.ts:19:3 › Catalog › TC-02 sorting by "Price (Low - High)" shows ascending prices 
+    [with-bugs] › tests/catalog.spec.ts:48:3 › Catalog › TC-04 main navigation labels are correct ──
+  13 passed (52.1s)

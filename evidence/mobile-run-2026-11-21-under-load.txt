@@ -1,0 +1,67 @@
+
+> qa-practice@1.0.0 test:mobile
+> wdio run mobile/wdio.conf.ts
+
+
+Execution of 1 workers started at 2026-11-21T21:55:55.428Z
+
+[0-0] RUNNING in Android on Android - file:///home/h/qa-practice/mobile/specs/shop.spec.ts
+[0-0] Error in "My Demo App (Android).MOB-04 login without a username shows a field error"
+Error: waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+    ---
+    at async Context.freshStart (/home/h/qa-practice/mobile/support/app.ts:19:3)
+[0-0] Error in "My Demo App (Android).MOB-05 a locked-out user cannot log in"
+Error: waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+    ---
+    at async Context.freshStart (/home/h/qa-practice/mobile/support/app.ts:19:3)
+[0-0] Error in "My Demo App (Android).MOB-06 checkout asks to log in, then continues to the address step"
+Error: waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+    ---
+    at async Context.freshStart (/home/h/qa-practice/mobile/support/app.ts:19:3)
+[0-0] FAILED in Android on Android - file:///home/h/qa-practice/mobile/specs/shop.spec.ts
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] Running: Android-MyDemoAppRN.1.3.0.build-244.apk on Android
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] Session ID: dd7da52a-c12d-45e9-8020-30f159ccb894
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] » mobile/specs/shop.spec.ts
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] My Demo App (Android)
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]    ✓ MOB-01 catalog shows the first products with their prices
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]    ✓ MOB-02 adding quantity 2 updates the badge and the cart total
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]    ✓ MOB-03 removing the only item empties the cart
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]    ✖ MOB-04 login without a username shows a field error
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]    ✖ "before each" hook for My Demo App (Android)
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]    ✖ MOB-05 a locked-out user cannot log in
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]    ✖ MOB-06 checkout asks to log in, then continues to the address step
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] 3 passing (1m 9.8s)
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] 4 failing
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] 1) My Demo App (Android) MOB-04 login without a username shows a field error
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] Test skipped due to failure in hook ""before each" hook: freshStart for "MOB-04 login without a username shows a field error"": waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] Error: waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]     ---
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]     at async Context.freshStart (/home/h/qa-practice/mobile/support/app.ts:19:3)
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] 2) My Demo App (Android) "before each" hook for My Demo App (Android)
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] Error: waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]     ---
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]     at async Context.freshStart (/home/h/qa-practice/mobile/support/app.ts:19:3)
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] 3) My Demo App (Android) MOB-05 a locked-out user cannot log in
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] Test skipped due to failure in hook ""before each" hook: freshStart for "MOB-04 login without a username shows a field error"": waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] Error: waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]     ---
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]     at async Context.freshStart (/home/h/qa-practice/mobile/support/app.ts:19:3)
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] 4) My Demo App (Android) MOB-06 checkout asks to log in, then continues to the address step
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] Test skipped due to failure in hook ""before each" hook: freshStart for "MOB-04 login without a username shows a field error"": waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0] Error: waitUntil condition failed with the following reason: WebDriverError: Timed out after 10244ms waiting for the root AccessibilityNodeInfo in the active window. Make sure the active window is not constantly hogging the main UI thread (e.g. the application is being idle long enough), so the accessibility manager could do its work when running "elements" with method "POST" and args "{"using":"accessibility id","value":"products screen"}"
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]     ---
+[Android-MyDemoAppRN.1.3.0.build-244.apk Android #0-0]     at async Context.freshStart (/home/h/qa-practice/mobile/support/app.ts:19:3)
+
+
+Spec Files:	 0 passed, 1 failed, 1 total (100% completed) in 00:01:22  
+

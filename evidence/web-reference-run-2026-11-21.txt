@@ -1,0 +1,25 @@
+
+Running 20 tests using 1 worker
+
+  ✓   1 [reference] › tests/api/auth.api.spec.ts:6:3 › API - authentication and authorization › API-05 GET /users/me without a token is rejected (401) (613ms)
+  ✓   2 [reference] › tests/api/auth.api.spec.ts:11:3 › API - authentication and authorization › API-06 GET /invoices without a token is rejected (401) (486ms)
+  ✓   3 [reference] › tests/api/auth.api.spec.ts:16:3 › API - authentication and authorization › API-07 login with a wrong password returns 401 and no token (424ms)
+  ✓   4 [reference] › tests/api/auth.api.spec.ts:24:3 › API - authentication and authorization › API-08 a new user can log in and read only their own, non-secret profile (2.1s)
+  ✓   5 [reference] › tests/api/cart.api.spec.ts:11:3 › API - cart › API-09 a product added to a new cart is returned with its quantity (1.7s)
+  ✓   6 [reference] › tests/api/cart.api.spec.ts:29:3 › API - cart › API-10 adding an unknown product is rejected and leaves the cart empty (2.5s)
+  ✓   7 [reference] › tests/api/products.api.spec.ts:6:3 › API - products › API-01 GET /products returns a well-formed first page (518ms)
+  ✓   8 [reference] › tests/api/products.api.spec.ts:27:3 › API - products › API-02 page 2 does not repeat any product from page 1 (846ms)
+  ✓   9 [reference] › tests/api/products.api.spec.ts:35:3 › API - products › API-03 sort=price,asc returns ascending prices (445ms)
+  ✓  10 [reference] › tests/api/products.api.spec.ts:42:3 › API - products › API-04 unknown product id returns 404 with a message, not a crash (397ms)
+  ✓  11 [reference] › tests/cart.spec.ts:10:3 › Product page and cart › TC-05 "+" button increases the quantity from 1 to 2 (31.9s)
+  ✓  12 [reference] › tests/cart.spec.ts:17:3 › Product page and cart › TC-06 adding a product shows a success message and updates the cart badge (2.9s)
+  ✓  13 [reference] › tests/cart.spec.ts:24:3 › Product page and cart › TC-07 cart line total equals unit price x quantity (3.6s)
+  ✓  14 [reference] › tests/catalog.spec.ts:11:3 › Catalog › TC-01 home page lists 9 products, each with a name and a price (1.9s)
+  ✓  15 [reference] › tests/catalog.spec.ts:19:3 › Catalog › TC-02 sorting by "Price (Low - High)" shows ascending prices (3.0s)
+  ✓  16 [reference] › tests/catalog.spec.ts:31:3 › Catalog › TC-03 searching "hammer" returns only hammers (2.4s)
+  ✓  17 [reference] › tests/catalog.spec.ts:48:3 › Catalog › TC-04 main navigation labels are correct (2.1s)
+  ✓  18 [reference] › tests/checkout.spec.ts:5:3 › Checkout (logged-in user, end to end) › E2E-01 a logged-in customer can buy a product and sees the invoice in their account (9.9s)
+  ✓  19 [reference] › tests/forms.spec.ts:4:3 › Forms (negative tests) › TC-08 contact form rejects an empty submission (1.9s)
+  ✓  20 [reference] › tests/forms.spec.ts:13:3 › Forms (negative tests) › TC-09 login with a wrong password is rejected with a clear message (2.9s)
+
+  20 passed (1.3m)
